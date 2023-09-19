@@ -33,4 +33,16 @@ public class ProductServiceImpl implements ProductService {
     public Product createProduct(Product product) {
         return productRepository.save(product);
     }
+
+    @Override
+    public ProductDto findProductById(long productId){
+        Product product = productRepository.findById(productId).get();
+        return mapToProductDto(product);
+    }
+
+    @Override
+    public void editProduct(ProductDto productDto) {
+        Product product = mapToProduct(productDto);
+        productRepository.save(product);
+    }
 }

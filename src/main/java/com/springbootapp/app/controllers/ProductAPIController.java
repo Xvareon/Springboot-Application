@@ -22,7 +22,7 @@ public class ProductAPIController {
     }
 
     @GetMapping("productapi/{id}")
-    public Product productDetail(@PathVariable int id){
+    public Product productDetail(@PathVariable long id){
         return new Product(id,"SampleData",6,5,4.00,"NotConnectedToDB");
     }
 
@@ -38,7 +38,7 @@ public class ProductAPIController {
     }
 
     @PutMapping("productapi/{id}/update")
-    public ResponseEntity<Product> updateProduct(@RequestBody Product product, @PathVariable("id") int productId){
+    public ResponseEntity<Product> updateProduct(@RequestBody Product product, @PathVariable("id") long productId){
         System.out.println(product.getName());
         System.out.println(product.getVariant());
         System.out.println(product.getQty());
@@ -48,7 +48,7 @@ public class ProductAPIController {
     }
 
     @DeleteMapping("productapi/{id}/delete")
-    public ResponseEntity<String> deleteProduct(@PathVariable("id") int productId){
+    public ResponseEntity<String> deleteProduct(@PathVariable("id") long productId){
         System.out.println(productId);
         return ResponseEntity.ok("Product Deleted Successfully");
     }

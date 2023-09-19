@@ -9,4 +9,8 @@ public interface ProductService {
     List<ProductDto> findALlProducts();
 
     Product createProduct(Product product);
+
+    ProductDto findProductById(long productId);
+
+    void editProduct(ProductDto product);
 }

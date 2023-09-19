@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
@@ -39,6 +40,20 @@ public class ProductController {
     @PostMapping("/products/create")
     public String createProduct(@ModelAttribute("product") Product product){
         productService.createProduct(product);
+        return "redirect:/products";
+    }
+
+    @GetMapping("/products/{productId}/edit")
+    public String editProductForm(@PathVariable("productId") long productId, Model model){
+        ProductDto product = productService.findProductById(productId);
+        model.addAttribute("product", product);
+        return "products-edit"; // resources/templates/products-edit.html
+    }
+
+    @PostMapping("/products/{productId}/edit")
+    public String editProduct(@PathVariable("productId") long productId, @ModelAttribute("product") ProductDto product){
+        product.setId(productId);
+        productService.editProduct(product);
         return "redirect:/products";
     }
 }
