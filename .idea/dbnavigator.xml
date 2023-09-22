@@ -49,8 +49,8 @@
           <tns-folder value="" />
           <tns-profile value="" />
           <type value="USER_PASSWORD" />
-          <user value="" />
-          <deprecated-pwd value="" />
+          <user value="postgres" />
+          <deprecated-pwd value="MTIzMTIz" />
         </database>
         <properties>
           <auto-commit value="false" />

@@ -6,7 +6,12 @@
 </head>
 <body>
 <a href="/products"><h1>Product List</h1></a>
-<a href="/products/create">Create New Product</a>
+<a href="/products/create">Create New Product</a><br>
+<br>
+<form th:action="@{/products/search}">
+    <input type="search" name="query" placeholder="Search a Product" aria-label="Search Product">
+</form>
+<br>
 <table border="1">
     <tr>
         <th>ID</th>
