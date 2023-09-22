@@ -30,6 +30,13 @@ public class ProductController {
         return "products-index"; // resources/templates/products-index.html
     }
 
+    @GetMapping("products/{productId}")
+    public String productView(@PathVariable("productId") long productId, Model model){
+        ProductDto productDto = productService.findProductById(productId);
+        model.addAttribute("product", productDto);
+        return "products-view";
+    }
+
     @GetMapping("/products/create")
     public String createProductForm(Model model){
         Product product = new Product();
