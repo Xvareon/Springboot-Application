@@ -30,8 +30,8 @@ public class ProductController {
         return "products-index"; // resources/templates/products-index.html
     }
 
-    @GetMapping("products/{productId}")
-    public String productView(@PathVariable("productId") long productId, Model model){
+    @GetMapping("/products/{productId}")
+    public String viewProduct(@PathVariable("productId") long productId, Model model){
         ProductDto productDto = productService.findProductById(productId);
         model.addAttribute("product", productDto);
         return "products-view";
@@ -61,6 +61,12 @@ public class ProductController {
     public String editProduct(@PathVariable("productId") long productId, @ModelAttribute("product") ProductDto product){
         product.setId(productId);
         productService.editProduct(product);
+        return "redirect:/products";
+    }
+
+    @GetMapping("/products/{productId}/delete")
+    public String deleteProduct(@PathVariable("productId") long productId){
+        productService.deleteProduct(productId);
         return "redirect:/products";
     }
 }

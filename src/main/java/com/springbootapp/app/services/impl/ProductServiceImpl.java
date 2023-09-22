@@ -45,4 +45,9 @@ public class ProductServiceImpl implements ProductService {
         Product product = mapToProduct(productDto);
         productRepository.save(product);
     }
+
+    @Override
+    public void deleteProduct(long productId) {
+        productRepository.deleteById(productId);
+    }
 }
