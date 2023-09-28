@@ -1,4 +1,5 @@
-Springboot application made with Java, PostgreSQL, Thymeleaf, and Hibernate. This application has CRUD and API.
+## Springboot application made with Java, PostgreSQL, Thymeleaf, and JPA.
+
 # Getting Started
 
 ### Reference Documentation
