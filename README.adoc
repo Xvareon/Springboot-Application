@@ -1,3 +1,76 @@
+## Springboot application made with Java, Maven, PostgreSQL, Thymeleaf, and JPA.
+
+## PROJECT DEPENDENCIES
+- [Java 17 (JDK)](https://www.oracle.com/ph/java/technologies/downloads/#jdk17-windows)
+- [IntelliJ (IDE)](https://www.jetbrains.com/idea/download/?section=windows)
+- [Spring Initializr](https://start.spring.io/)
+- [PostgreSQL](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads)
+- [Table Plus](https://tableplus.com/windows) or [pgAdmin 4](https://www.pgadmin.org/download/pgadmin-4-windows/)
+
+## PROJECT SETUP
+- For setup, Go to the Spring Initializr Website
+- Choose a Maven project
+- Choose Spring Boot 3.1.4 +
+- Choose Java 17
+
+In the dependencies section, add the following:
+- Spring Web (Web)
+- Thymeleaf (Template Engine)
+- Spring Boot DevTools
+- Lombok
+- Spring Data JPA (SQL)
+- PostgreSQL Driver (SQL)
+
+Generate the project.
+
+## DB SETUP
+- Configure your PostgreSQL management studio
+- Create a database and name it the same as your connection string
+- Navigate to the src directory and go to " application.properties "
+- Configure your application properties to have a format similar to this:
+[source,java,indent=0]
+----
+spring.datasource.url=jdbc:postgresql://localhost:5432/yourProjectName
+spring.datasource.username=yourPostgresUserName
+spring.datasource.password=yourPassword
+spring.datasource.driver-class-name=org.postgresql.Driver
+spring.jpa.hibernate.ddl-auto=update
+----
+- Run the main application to check connection
+- Create a models package and create a model class inside for your respective database table name
+- Rerun the main application to create the database table
+
+
+## AND YOU ARE SET!
+- Make sure you have settings -> plugins -> database navigator(to make a connection to the database) or DB Browser installed
+- Make sure you have settings -> plugins -> Lombok installed
+
+
+## =================================================
+
+# Getting Started
+
+### Reference Documentation
+For further reference, please consider the following sections:
+
+* [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
+* [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/3.1.3/maven-plugin/reference/html/)
+* [Create an OCI image](https://docs.spring.io/spring-boot/docs/3.1.3/maven-plugin/reference/html/#build-image)
+* [Spring Web](https://docs.spring.io/spring-boot/docs/3.1.3/reference/htmlsingle/index.html#web)
+* [Spring Data JPA](https://docs.spring.io/spring-boot/docs/3.1.3/reference/htmlsingle/index.html#data.sql.jpa-and-spring-data)
+
+### Guides
+The following guides illustrate how to use some features concretely:
+
+* [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
+* [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
+* [Building REST services with Spring](https://spring.io/guides/tutorials/rest/)
+* [Accessing Data with JPA](https://spring.io/guides/gs/accessing-data-jpa/)
+* [Accessing data with MySQL](https://spring.io/guides/gs/accessing-data-mysql/)
+
+## =================================================
+
+
 = Spring Boot image:https://ci.spring.io/api/v1/teams/spring-boot/pipelines/spring-boot-3.2.x/jobs/build/badge["Build Status", link="https://ci.spring.io/teams/spring-boot/pipelines/spring-boot-3.2.x?groups=Build"] image:https://badges.gitter.im/Join Chat.svg["Chat",link="https://gitter.im/spring-projects/spring-boot?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge"] image:https://img.shields.io/badge/Revved%20up%20by-Gradle%20Enterprise-06A0CE?logo=Gradle&labelColor=02303A["Revved up by Gradle Enterprise", link="https://ge.spring.io/scans?&search.rootProjectNames=Spring%20Boot%20Build&search.rootProjectNames=spring-boot-build"]
 :docs: https://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference
 :github: https://github.com/spring-projects/spring-boot
