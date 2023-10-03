@@ -10,6 +10,9 @@
 <form method="post" th:action="@{/products/{productId}/edit(productId=${product.id})}" th:object="${product}">
     <input type="hidden" th:field="*{id}">
 
+    <label for="id">ID:</label>
+    <input type="text" id="id" name="id" th:value="${product.id}" readonly><br>
+
     <label for="name">Name:</label>
     <input type="text" id="name" name="name" th:value="${product.name}" required><br>
 
