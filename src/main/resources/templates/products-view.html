@@ -21,6 +21,7 @@
     <strong>Description:</strong> <span th:text="${product.description}"></span><br>
 
     <a th:href="@{/products/{productId}/edit(productId=${product.id})}">Edit This Product</a>
+
     <a th:href="@{/products/{productId}/delete(productId=${product.id})}">Delete This Product</a>
 
 </body>
