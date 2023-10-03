@@ -42,7 +42,7 @@ spring.jpa.hibernate.ddl-auto=update
 
 
 ## AND YOU ARE SET!
-- http://localhost:8080/products is the test domain
+- http://localhost:8080/products is the server domain
 - Make sure you have settings -> plugins -> database navigator(to make a connection to the database) or DB Browser installed
 - Make sure you have settings -> plugins -> Lombok installed
 
