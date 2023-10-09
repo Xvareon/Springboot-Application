@@ -22,7 +22,9 @@
 
     <a th:href="@{/products/{productId}/edit(productId=${product.id})}">Edit This Product</a>
 
-    <a th:href="@{/products/{productId}/delete(productId=${product.id})}">Delete This Product</a>
+    <form th:action="@{/products/{productId}/delete(productId=${product.id})}" method="post">
+        <input type="submit" value="Delete" />
+    </form>
 
 </body>
 </html>

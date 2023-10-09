@@ -32,7 +32,11 @@
 
         <td><a th:href="@{/products/{productId}(productId=${product.id})}">View</a></td>
         <td><a th:href="@{/products/{productId}/edit(productId=${product.id})}">Edit</a></td>
-        <td><a th:href="@{/products/{productId}/delete(productId=${product.id})}">Delete</a></td>
+        <td>
+            <form th:action="@{/products/{productId}/delete(productId=${product.id})}" method="post">
+                <input type="submit" value="Delete" />
+            </form>
+        </td>
 
     </tr>
 </table>
