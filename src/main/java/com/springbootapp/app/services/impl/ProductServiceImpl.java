@@ -24,7 +24,7 @@ public class ProductServiceImpl implements ProductService {
         this.productRepository = productRepository;
     }
     @Override
-    public List<ProductDto> findALlProducts() {
+    public List<ProductDto> findAllProducts() {
         List<Product> products = productRepository.findAllByOrderById();
         return products.stream().map(ProductMapper::mapToProductDto).collect(Collectors.toList());
     }

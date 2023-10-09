@@ -6,7 +6,7 @@ import com.springbootapp.app.models.Product;
 import java.util.List;
 
 public interface ProductService {
-    List<ProductDto> findALlProducts();
+    List<ProductDto> findAllProducts();
 
     Product createProduct(Product product);
 

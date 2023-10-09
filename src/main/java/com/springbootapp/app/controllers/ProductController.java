@@ -22,7 +22,7 @@ public class ProductController {
 
     @GetMapping("/products")
     public  String listProducts(Model model){
-        List<ProductDto> products = productService.findALlProducts();
+        List<ProductDto> products = productService.findAllProducts();
         model.addAttribute("products",products);
         return "products-index"; // resources/templates/products-index.html
     }
